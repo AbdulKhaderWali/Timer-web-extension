@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer Extension</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 250px; /* Increase the width */
+    }
+    #timeInput {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 5px;
+      width: 100%;
+      margin-top: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    #startButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #startButton:hover {
+      background-color: #45a049;
+    }
+    #pauseButton {
+      background-color: #f0ad4e;
+      color: white;
+    }
+    #pauseButton:hover {
+      background-color: #ec971f;
+    }
+    #resetButton {
+      background-color: #d9534f;
+      color: white;
+    }
+    #resetButton:hover {
+      background-color: #c9302c;
+    }
+    #tickCheckbox {
+      margin-bottom: 10px;
+    }
+    #remainingTime {
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    #timeUpMessage {
+      color: red;
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Timer</h1>
+  <input type="text" id="timeInput" placeholder="Enter time in seconds or minutes (e.g., 30s or 1m)">
+  <div>
+    <input type="checkbox" id="tickCheckbox">
+    <label for="tickCheckbox">Enable ticking sound</label>
+  </div>
+  <button id="startButton">Start Timer</button>
+  <button id="pauseButton" style="display: none;">Pause Timer</button>
+  <button id="resetButton" style="display: none;">Reset Timer</button>
+  <div id="remainingTime"></div>
+  <div id="timeUpMessage">Time is up!</div>
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+  <audio id="tickSound" src="tick.mp3" preload="auto"></audio>
+
+  <script src="popup.js"></script>
+</body>
+</html>
